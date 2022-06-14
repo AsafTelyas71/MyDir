@@ -27,12 +27,11 @@ class Window:
 
     def design_tree(self):
         self.my_tree["columns"] = ("Name", "Size", "Modified Date")
-        # my_tree.column("#0", width=120, minwidth=10)
+        self.my_tree.column("#0", width=75, stretch=NO)
         self.my_tree.column("Name", anchor=W, width=120)
         self.my_tree.column("Size", anchor=CENTER, width=120)
         self.my_tree.column("Modified Date", anchor=W, width=120)
 
-        # my_tree.heading("#0", text="Label")
         self.my_tree.heading("Name", text="Name", anchor=W)
         self.my_tree.heading("Size", text="Size", anchor=CENTER)
         self.my_tree.heading("Modified Date", text="Modified Date", anchor=W)
@@ -125,3 +124,5 @@ class Window:
     def fixed_map(self, style, option):
         return [elm for elm in style.map('Treeview', query_opt=option) if
                 elm[:2] != ('!disabled', '!selected')]
+
+t = Window(r"C:\Users\user\Desktop\Courses\Python\dir2\test.txt")
