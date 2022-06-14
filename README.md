@@ -6,6 +6,10 @@ The program receives the output of the command as a txt file, and presents the i
 
 Also, it enables text filtering and filtering by a pre-defined file extention (currently set to .dat).
 
+
+
+
+
 _An example for an input file is available under "test.txt"._
 
 _(The exact cmd command is dir "path" /S)._
