@@ -7,7 +7,6 @@ from anytree.search import find, findall
 
 
 class DirCommandParser:
-    #todo mind the space in the print
     def __init__(self, path):
         self.nodes = []
         self.data = self.get_data(path)
@@ -27,7 +26,6 @@ class DirCommandParser:
             self.process_files(curr_directory.group(1), curr_below_data)
 
     def process_files(self, mother_line ,current_data):
-        #a#
         files_list = re.findall(pattern='(\d{2}/\d{2}/\d{4}  \d{2}:\d{2}) \S{2}\s+([,0-9]+) (.+)', string=current_data)
         for modified_date, size, file in files_list:
             r = Record(value=file, root=self.nodes[0], mother_line=mother_line, modified_date=modified_date,
@@ -69,7 +67,6 @@ class Record:
         if self.level == 0:
             return None
         father_id = self.get_id(os.path.dirname(self.value))
-        #return father_id
         return find(root, lambda node: node.id == father_id)
 
     def get_id(self, value):
