@@ -28,22 +28,11 @@ class DirCommandParser:
 
     def process_files(self, mother_line ,current_data):
         #a#
-        files_list = re.findall(pattern='(\d{2}/\d{2}/\d{4}  \d{2}:\d{2}) \S{2}\s+([<>A-Z]*)\s+([,0-9]*)\s+(.+)', string=current_data)
-        for modified_date, is_dir ,size, file in files_list:
-            if file == "." or file == "..":
-                continue
-            if is_dir:
-                pattern = re.compile(f"Directory of {os.path.join(mother_line, file)}".replace("\\", "\\\\"))
-                if not re.findall(pattern=pattern, string=self.data):
-                    r = Record(value=os.path.join(mother_line, file), root=self.nodes[0], is_dir=True).export()
-                    sub_r = Record(value="", root=self.nodes[0], mother_line=os.path.join(mother_line, file)).export()
-                    self.update_nodes(r)
-                    self.update_nodes(sub_r)
-                else:
-                    pass
-            else:
-                r = Record(value=file, root=self.nodes[0], mother_line=mother_line, modified_date=modified_date, size_in_kb=int(size.replace(",",""))).export()
-                self.update_nodes(r)
+        files_list = re.findall(pattern='(\d{2}/\d{2}/\d{4}  \d{2}:\d{2}) \S{2}\s+([,0-9]+) (.+)', string=current_data)
+        for modified_date, size, file in files_list:
+            r = Record(value=file, root=self.nodes[0], mother_line=mother_line, modified_date=modified_date,
+                       size_in_kb=int(size.replace(",", ""))).export()
+            self.update_nodes(r)
     def update_nodes(self, record):
         self.nodes.append(AnyNode(**record))
 
@@ -63,7 +52,7 @@ class Record:
             self.value = os.path.join(mother_line, value)
             self.modified_date = modified_date
             self.size_in_kb = str(round(size_in_kb / 1024, 2))
-        self.is_geo = self.get_geo()
+        self.is_geo = self.get_ext()
         self.id = self.get_id(self.value)
         if not is_root:
             self.root_count = root.full_path.count("\\")
@@ -73,8 +62,8 @@ class Record:
             self.parent = None
             self.level = 0
 
-    def get_geo(self):
-        return self.value.endswith('.asaf')
+    def get_ext(self):
+        return self.value.endswith('.dat')
 
     def get_parent(self, root):
         if self.level == 0:
@@ -102,16 +91,4 @@ class Record:
             base_export.update({"modified_date": self.modified_date, "size_in_kb": self.size_in_kb})
         return base_export
 
-def main():
-    path = r"C:\Users\user\Desktop\Courses\Python\dir2\test.txt"
-    dcp = DirCommandParser(path)
-    for item in dcp.nodes:
-        #print('\t' * item['level'], item["name"], item["is_dir"])
-        print(item.parent)
-    #print(RenderTree(dcp.nodes[0]))
 
-if __name__ == "__main__":
-    main()
-
-
-•
