@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import ttk
-from dcp2 import DirCommandParser
+from DirCommandParser import DirCommandParser
 from anytree.search import find, findall
 class Window:
 
