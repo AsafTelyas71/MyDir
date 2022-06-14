@@ -1,0 +1,68 @@
+ Volume in drive C has no label.
+ Volume Serial Number is 7284-C65B
+
+ Directory of C:\Users\user\Desktop\Courses\Kivy Library
+
+05/13/2022  02:08 PM    <DIR>          .
+05/13/2022  02:08 PM    <DIR>          ..
+05/13/2022  02:08 PM    <DIR>          .idea
+05/13/2022  02:08 PM    <DIR>          kivy_tree_view
+01/08/2022  03:38 PM             1,149 main.py
+05/13/2022  02:09 PM    <DIR>          data
+01/15/2022  12:35 PM             1,358 thelab.kv
+01/18/2022  09:55 PM               621 wxpython_library.py
+05/13/2022  02:08 PM    <DIR>          yes!
+               3 File(s)          3,128 bytes
+
+ Directory of C:\Users\user\Desktop\Courses\Kivy Library\.idea
+
+05/13/2022  02:08 PM    <DIR>          .
+05/13/2022  02:08 PM    <DIR>          ..
+01/07/2022  06:27 PM                50 .gitignore
+05/13/2022  02:08 PM    <DIR>          inspectionProfiles
+01/07/2022  06:27 PM               291 Kivy Library.iml
+01/07/2022  06:27 PM               188 misc.xml
+01/07/2022  06:27 PM               283 modules.xml
+02/07/2022  09:00 PM             6,271 workspace.xml
+               5 File(s)          7,083 bytes
+
+ Directory of C:\Users\user\Desktop\Courses\Kivy Library\.idea\inspectionProfiles
+
+05/13/2022  02:08 PM    <DIR>          .
+05/13/2022  02:08 PM    <DIR>          ..
+05/13/2022  02:07 PM                 0 file.data
+01/07/2022  06:27 PM               174 profiles_settings.xml
+               2 File(s)            174 bytes
+
+ Directory of C:\Users\user\Desktop\Courses\Kivy Library\kivy_tree_view
+
+05/13/2022  02:08 PM    <DIR>          .
+05/13/2022  02:08 PM    <DIR>          ..
+05/13/2022  02:07 PM                 0 file.data
+01/15/2022  01:52 PM             2,160 main.py
+               2 File(s)          2,160 bytes
+
+ Directory of C:\Users\user\Desktop\Courses\Kivy Library\nope
+
+05/13/2022  02:09 PM    <DIR>          .
+05/13/2022  02:09 PM    <DIR>          ..
+05/13/2022  02:08 PM                 0 file1.txt
+               1 File(s)              0 bytes
+
+ Directory of C:\Users\user\Desktop\Courses\Kivy Library\yes!
+
+05/13/2022  02:08 PM    <DIR>          .
+05/13/2022  02:08 PM    <DIR>          ..
+05/13/2022  02:08 PM    <DIR>          asd
+               0 File(s)              0 bytes
+
+ Directory of C:\Users\user\Desktop\Courses\Kivy Library\yes!\asd
+
+05/13/2022  02:08 PM    <DIR>          .
+05/13/2022  02:08 PM    <DIR>          ..
+05/13/2022  02:07 PM                 0 file1.dat
+               1 File(s)              0 bytes
+
+     Total Files Listed:
+              14 File(s)         12,545 bytes
+              20 Dir(s)  99,889,696,768 bytes free
