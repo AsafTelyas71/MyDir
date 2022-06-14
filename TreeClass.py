@@ -52,23 +52,25 @@ class Window:
         for record in self.my_tree.get_children():
             self.my_tree.delete(record)
         for curr_node in selections:
-            parent = ''
-            open = 0
-            values = [curr_node.name]
-            tags = ["all"]
+            attributes = {"parent": '',
+                          "open": 0,
+                          "values": [curr_node.name],
+                          "tags": ["all"],
+                          "index": "end",
+                          "iid": curr_node.id}
             if curr_node.level != 0:
-                parent = curr_node.parent.id
+                attributes["parent"] = curr_node.parent.id
             else:
-                open = 1
+                attributes["open"] = 1
             if not curr_node.is_dir:
-                values.extend([curr_node.size_in_kb, curr_node.modified_date])
+                attributes["values"].extend([curr_node.size_in_kb, curr_node.modified_date])
             if curr_node.is_geo:
-                tags.append("geo")
+                attributes["tags"].append("geo")
                 temp = curr_node.parent
                 while temp:
                     self.my_tree.item(temp.id, tags=("all", "geo"))
                     temp = temp.parent
-            self.my_tree.insert(parent=parent, index='end', iid=curr_node.id, values=values, tags=tags, open=open)
+            self.my_tree.insert(**attributes)
 
     def get_current_nodes(self):
         nodes_ids = list(self.my_tree.get_children())
@@ -123,5 +125,3 @@ class Window:
     def fixed_map(self, style, option):
         return [elm for elm in style.map('Treeview', query_opt=option) if
                 elm[:2] != ('!disabled', '!selected')]
-
-t = Window(path=r"C:\Users\user\Desktop\Courses\Python\dir2\test.txt")
